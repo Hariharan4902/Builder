@@ -1,0 +1,608 @@
+:root {
+    --royal-blue: #003399;
+    /* Primary (Background) */
+    --metallic-gold: #D4AF37;
+    /* Accent / Highlight */
+    --metallic-gold-dark: #b8941f;
+    /* Darker metallic gold */
+    --white: #FFFFFF;
+    /* Neutral (Text / Background) */
+    --charcoal-black: #1A1A1A;
+    /* Dark Accent (Optional) */
+    --light-gray: #f5f7fa;
+    /* Light blue-gray for readability */
+    --medium-gray: #bdc3c7;
+    --dark-gray: #2C3E50;
+    --accent-blue: #3498DB;
+    --accent-green: #27AE60;
+}
+
+/* --- PAGE HEADER BANNER (ANIMATIONS REMOVED) --- */
+.page-header-banner {
+    background-image: url('../images/builderimages/image5.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    overflow: hidden;
+    /* Removed animation: bannerZoom */
+}
+
+/* Removed @keyframes bannerZoom */
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 1;
+    /* Removed animation: overlayFade */
+}
+
+/* Removed @keyframes overlayFade */
+
+.header-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Removed opacity: 0 and transform: translateY(30px) */
+    /* Removed animation: contentFadeIn */
+}
+
+/* Removed @keyframes contentFadeIn */
+
+.header-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--metallic-gold);
+    /* metallic gold color from your variables */
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.breadcrumb {
+    font-size: 0.9rem;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.breadcrumb a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--metallic-gold);
+}
+
+.breadcrumb i {
+    color: var(--metallic-gold);
+}
+
+.breadcrumb span {
+    font-weight: 600;
+}
+
+/* --- GENERAL SECTION STYLES for About Page --- */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section-subtitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--charcoal-black);
+    margin-bottom: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.subtitle-underline {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--metallic-gold), var(--metallic-gold-dark));
+    border: none;
+    margin: 0 auto 20px auto;
+    border-radius: 2px;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+    opacity: 0.9;
+    margin-bottom: 50px;
+    font-weight: 500;
+}
+
+/* --- 1. WHO WE ARE (Intro Section) --- */
+.about-intro-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-intro-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23D4AF37" opacity="0.03"><polygon points="0,0 1000,50 1000,100 0,100"/></svg>') no-repeat center bottom;
+    background-size: cover;
+}
+
+.about-content-top {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image {
+    flex-shrink: 0;
+    width: 45%;
+    max-width: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    /* Removed transform: perspective(1000px) rotateY(-5deg); */
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+}
+
+.about-image:hover {
+    /* Kept hover effects for interactivity */
+    transform: scale(1.02); 
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.about-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(212, 175, 55, 0.1) 0%, rgba(26, 26, 26, 0.1) 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.about-image:hover::before {
+    opacity: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+.about-text {
+    flex-grow: 1;
+    font-size: 1rem;
+    color: var(--charcoal-black);
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.about-text p:not(:last-child) {
+    margin-bottom: 25px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.about-text p:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    background: var(--metallic-gold);
+    border-radius: 50%;
+}
+
+/* --- 2. ABOUT FEATURES (Features Grid) --- */
+
+
+
+
+.about-features-section {
+    padding: 100px 0;
+    background: var(--charcoal-black);
+    position: relative;
+}
+
+.about-features-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23FFFFFF" opacity="0.02"><rect x="0" y="0" width="100" height="100"/></svg>');
+}
+
+.about-features-section .section-subtitle,
+.about-features-section .section-description {
+    color: var(--white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-item {
+    background: linear-gradient(145deg, var(--white), var(--light-gray));
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature-item::before {
+    /* Removed the animation effect, only kept hover transition */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.feature-item:hover::before {
+    left: 100%;
+}
+
+.feature-item:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    border-color: var(--metallic-gold);
+}
+
+.feature-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--metallic-gold), var(--metallic-gold-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--white);
+    margin: 0 auto 25px auto;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-icon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature-item:hover .feature-icon-wrapper {
+    /* Removed rotateY(360deg), only kept scale and shadow */
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+}
+
+.feature-item:hover .feature-icon-wrapper::before {
+    opacity: 1;
+}
+
+.feature-item h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--charcoal-black);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.feature-item p {
+    font-size: 0.95rem;
+    color: var(--dark-gray);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.feature-item .read-more {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--charcoal-black);
+    text-decoration: none;
+    position: relative;
+    padding-right: 25px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.feature-item .read-more::after {
+    content: '\f061';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: right 0.3s ease;
+}
+
+.feature-item .read-more:hover {
+    color: var(--metallic-gold);
+    padding-right: 30px;
+}
+
+.feature-item .read-more:hover::after {
+    right: -5px;
+}
+
+/* --- 3. OUR TEAM Section --- */
+.our-team-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    position: relative;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+}
+
+.team-member {
+    text-align: center;
+    background: var(--white);
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-member::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--metallic-gold), var(--metallic-gold-dark));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.team-member:hover::before {
+    transform: scaleX(1);
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.member-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 25px auto;
+}
+
+.member-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: all 0.5s ease;
+    border-radius: 12px;
+}
+
+.member-image-wrapper:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+.member-social {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(26, 26, 26, 0.9));
+    padding: 20px 0 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    border-radius: 0 0 12px 12px;
+}
+
+.member-image-wrapper:hover .member-social {
+    transform: translateY(0);
+}
+
+.member-social a {
+    width: 35px;
+    height: 35px;
+    background: var(--metallic-gold);
+    color: var(--charcoal-black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.member-social a:hover {
+    background: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.team-member h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--charcoal-black);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.member-position {
+    font-size: 0.95rem;
+    color: black;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.member-bio {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* --- REMOVED: Advanced Animations (keyframes and custom animation classes) --- */
+
+
+/* --- Responsive Styles for About Page (Unchanged) --- */
+@media (max-width: 1200px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .about-content-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .about-image {
+        width: 80%;
+        transform: none;
+    }
+
+    .about-image:hover {
+        transform: scale(1.02);
+    }
+
+    .about-text {
+        width: 100%;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-subtitle {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .about-image {
+        width: 100%;
+    }
+
+    .section-subtitle {
+        font-size: 1.8rem;
+    }
+
+    .about-intro-section,
+    .about-features-section,
+    .our-team-section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .feature-item,
+    .team-member {
+        padding: 25px 20px;
+    }
+
+    .member-image-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+
+    .section-subtitle {
+        font-size: 1.6rem;
+    }
+}

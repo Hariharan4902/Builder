@@ -1,0 +1,98 @@
+/* Color Variables (Assuming they are already defined in navbar.css, but including for reference) */
+/*
+:root {
+--charcoal: #1A1A1A;
+--gold: #FFD700;
+--white: #FFFFFF;
+--light-gray: #ECF0F1;
+}
+*/
+
+/* -------------------- Topbar Styles (image_54e44b.png) -------------------- */
+.topbar {
+    /* Use Charcoal Black for the background */
+    background-color: var(--charcoal);
+    color: var(--white);
+    padding: 8px 0;
+    font-size: 14px;
+    position: relative;
+    z-index: 1010; /* Above main content, below sticky navbar */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.topbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.topbar .d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar .top-left-info ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.topbar .top-left-info li {
+    margin-right: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.topbar .top-left-info i {
+    margin-right: 8px;
+    /* Use Gold for icons */
+    color: var(--gold);
+}
+
+.topbar .top-left-info a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.topbar .top-left-info a:hover {
+    color: var(--gold);
+}
+
+.topbar .top-right-social {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.topbar .top-right-social span {
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.topbar .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.topbar .social-icons a {
+    color: var(--white);
+    font-size: 16px;
+    transition: color 0.3s, transform 0.3s;
+    text-decoration: none;
+}
+
+.topbar .social-icons a:hover {
+    /* Hover color is Gold */
+    color: var(--gold);
+    transform: translateY(-2px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .topbar {
+        display: none; /* Often hidden on mobile for space */
+    }
+}

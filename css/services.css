@@ -1,0 +1,666 @@
+/* ================= CSS Variables ================= */
+:root {
+    --royal-blue: #003399;
+    --metallic-gold: #D4AF37;
+    --white: #FFFFFF;
+    --charcoal-black: #1A1A1A;
+    --light-gray: #f5f7fa;
+    --metallic-gold-dark: #b8941f;
+}
+
+/* ================= Animation Keyframes ================= */
+
+/**
+ * ----------------------------------------
+ * @keyframes flip-scale-up-diag-2
+ * ----------------------------------------
+ */
+@-webkit-keyframes flip-scale-up-diag-2 {
+  0% {
+    -webkit-transform: scale(1) translate(0, 0) rotate3d(-1, 1, 0, 0deg);
+            transform: scale(1) translate(0, 0) rotate3d(-1, 1, 0, 0deg);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: scale(1.2) translate(50px, 50px) rotate3d(-1, 1, 0, -180deg);
+            transform: scale(1.2) translate(50px, 50px) rotate3d(-1, 1, 0, -180deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 0) rotate3d(-1, 1, 0, -360deg);
+            transform: scale(1) translate(0, 0) rotate3d(-1, 1, 0, -360deg);
+    opacity: 1;
+  }
+}
+@keyframes flip-scale-up-diag-2 {
+  0% {
+    -webkit-transform: scale(1) translate(0, 0) rotate3d(-1, 1, 0, 0deg);
+            transform: scale(1) translate(0, 0) rotate3d(-1, 1, 0, 0deg);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: scale(1.2) translate(50px, 50px) rotate3d(-1, 1, 0, -180deg);
+            transform: scale(1.2) translate(50px, 50px) rotate3d(-1, 1, 0, -180deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 0) rotate3d(-1, 1, 0, -360deg);
+            transform: scale(1) translate(0, 0) rotate3d(-1, 1, 0, -360deg);
+    opacity: 1;
+  }
+}
+
+/* Class to apply the animation (from your prompt) */
+.flip-scale-up-diag-2 {
+    -webkit-animation: flip-scale-up-diag-2 0.5s linear both;
+    animation: flip-scale-up-diag-2 0.5s linear both;
+}
+
+/* Optional: Stagger the animation for the cards */
+.services-cards .service-card:nth-child(1).flip-scale-up-diag-2 {
+    animation-delay: 0.2s;
+}
+
+.services-cards .service-card:nth-child(2).flip-scale-up-diag-2 {
+    animation-delay: 0.4s;
+}
+
+/* ================= Services Section (Your Existing Code) ================= */
+
+/* Section container */
+.services-section {
+    padding: 80px 5%;
+    background-color: var(--white);
+}
+
+/* Inner container */
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Intro text */
+.services-intro {
+    flex: 1;
+    max-width: 400px;
+}
+
+.services-intro h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--charcoal-black);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.heading-underline {
+    width: 60px;
+    height: 3px;
+    background-color: var(--metallic-gold);
+    border: none;
+    margin: 0 0 25px 0;
+}
+
+.services-intro p {
+    color: var(--charcoal-black);
+    margin-bottom: 30px;
+    line-height: 1.7;
+    opacity: 0.85;
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--metallic-gold);
+    color: var(--charcoal-black);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.4);
+}
+
+.btn-secondary:hover {
+    background-color: var(--metallic-gold-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.5);
+}
+
+/* Service cards container */
+.services-cards {
+    flex: 2;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    /* Added perspective for a realistic 3D flip effect */
+    perspective: 1000px; 
+}
+
+/* Individual card */
+.service-card {
+    flex: 1;
+    min-width: 280px;
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card image */
+.service-card img {
+    width: 100%;
+    height: 200px; /* adjust as needed */
+    object-fit: cover;
+    display: block;
+}
+
+/* Card content */
+.card-content {
+    padding: 20px;
+}
+
+.card-divider {
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: var(--metallic-gold);
+    margin-bottom: 15px;
+}
+
+.card-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--charcoal-black);
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: var(--charcoal-black);
+    opacity: 0.7;
+    line-height: 1.5;
+}
+
+/* Hover effect */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services-intro {
+        max-width: 100%;
+        text-align: center;
+        padding-bottom: 40px;
+    }
+
+    .heading-underline {
+        margin: 0 auto 25px auto;
+    }
+
+    .services-cards {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-section {
+        padding: 60px 5%;
+    }
+
+    .service-card img {
+        height: 180px;
+    }
+}
+
+/* our PROFESSIONAL service */
+
+.pro-services-section {
+    padding: 80px 5%;
+    background-color: var(--white);
+}
+
+.pro-services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pro-services-intro {
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.pro-services-intro h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--charcoal-black);
+    margin-bottom: 10px;
+}
+
+.pro-services-intro p {
+    font-size: 0.9rem;
+    color: var(--charcoal-black);
+    opacity: 0.8;
+}
+
+.pro-services-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Service Grid */
+.service-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 600px;
+}
+
+.service-item {
+    background-color: var(--light-gray);
+    color: var(--charcoal-black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.service-item i {
+    font-size: 2.2rem;
+    color: var(--charcoal-black);
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.service-item span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+
+.service-item.highlighted {
+    background-color: var(--metallic-gold);
+    color: var(--charcoal-black);
+}
+
+.service-item.highlighted i,
+.service-item.highlighted span {
+    color: var(--charcoal-black);
+}
+
+/* Hover background image with ::before */
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    z-index: -1;
+    pointer-events: none;
+    filter: brightness(1);
+}
+
+/* Change text & background on hover */
+.service-item:hover {
+    background-color: var(--charcoal-black);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-item:hover i,
+.service-item:hover span {
+    color: var(--white);
+}
+
+/* Show background image only when hover-active class added */
+.service-item.hover-active::before {
+    opacity: 1;
+    background-image: var(--hover-bg-image);
+    filter: brightness(0.5);
+    z-index: 0;
+}
+
+.service-item.highlighted:hover {
+    background-color: var(--charcoal-black);
+}
+
+/* Worker Image wrapper */
+.pro-worker-image-wrapper {
+    flex-shrink: 0;
+    width: 500px;
+    height: 550px;
+    overflow: hidden;
+    position: relative;
+    margin-top: -100px;
+    background-image: url('../images/builderimages/image3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: background-image 0.5s ease-in-out, transform 0.3s ease;
+}
+.pro-worker-image-wrapper {
+    position: relative;
+    transition: all 0.4s ease-in-out;
+}
+
+.pro-worker-image-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    transition: opacity 0.4s ease;
+    opacity: 0;
+}
+
+.service-item:hover ~ .pro-worker-image-wrapper::after {
+    opacity: 1;
+}
+
+
+.pro-worker-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .pro-services-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 500px;
+    }
+
+    .pro-worker-image-wrapper {
+        margin-top: 20px;
+        width: 100%;
+        height: 400px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* ==================== ANIMATION STYLES ==================== */
+
+/* 1️⃣ Bottom Forward */
+@-webkit-keyframes slide-in-elliptic-bottom-fwd {
+    0% {
+        -webkit-transform: translateY(600px) rotateX(30deg) scale(0);
+        transform: translateY(600px) rotateX(30deg) scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0) rotateX(0) scale(1);
+        transform: translateY(0) rotateX(0) scale(1);
+        -webkit-transform-origin: 50% 1400px;
+        transform-origin: 50% 1400px;
+        opacity: 1;
+    }
+}
+@keyframes slide-in-elliptic-bottom-fwd {
+    0% {
+        transform: translateY(600px) rotateX(30deg) scale(0);
+        transform-origin: 50% 100%;
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) rotateX(0) scale(1);
+        transform-origin: 50% 1400px;
+        opacity: 1;
+    }
+}
+.slide-in-elliptic-bottom-fwd {
+    animation: slide-in-elliptic-bottom-fwd 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* 2️⃣ Right Back */
+@-webkit-keyframes slide-in-elliptic-right-bck {
+    0% {
+        -webkit-transform: translateX(800px) rotateY(30deg) scale(6.5);
+        transform: translateX(800px) rotateY(30deg) scale(6.5);
+        -webkit-transform-origin: -100% 50%;
+        transform-origin: -100% 50%;
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0) rotateY(0) scale(1);
+        transform: translateX(0) rotateY(0) scale(1);
+        -webkit-transform-origin: 600px 50%;
+        transform-origin: 600px 50%;
+        opacity: 1;
+    }
+}
+@keyframes slide-in-elliptic-right-bck {
+    0% {
+        transform: translateX(800px) rotateY(30deg) scale(6.5);
+        transform-origin: -100% 50%;
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) rotateY(0) scale(1);
+        transform-origin: 600px 50%;
+        opacity: 1;
+    }
+}
+.slide-in-elliptic-right-bck {
+    animation: slide-in-elliptic-right-bck 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* 3️⃣ Left Forward */
+@-webkit-keyframes slide-in-elliptic-left-fwd {
+    0% {
+        -webkit-transform: translateX(-800px) rotateY(-30deg) scale(0);
+        transform: translateX(-800px) rotateY(-30deg) scale(0);
+        -webkit-transform-origin: 100% 50%;
+        transform-origin: 100% 50%;
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0) rotateY(0) scale(1);
+        transform: translateX(0) rotateY(0) scale(1);
+        -webkit-transform-origin: -600px 50%;
+        transform-origin: -600px 50%;
+        opacity: 1;
+    }
+}
+@keyframes slide-in-elliptic-left-fwd {
+    0% {
+        transform: translateX(-800px) rotateY(-30deg) scale(0);
+        transform-origin: 100% 50%;
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) rotateY(0) scale(1);
+        transform-origin: -600px 50%;
+        opacity: 1;
+    }
+}
+.slide-in-elliptic-left-fwd {
+    animation: slide-in-elliptic-left-fwd 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* You can add more animations for item 4, 5, 6 later */
+
+/* service page */
+
+/* --- Services Section --- */
+.services-list-section {
+    padding: 80px 0;
+    background-color: var(--white);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--charcoal-black);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.subtitle-underline {
+    width: 60px;
+    height: 3px;
+    background-color: var(--metallic-gold);
+    margin: 0 auto 20px auto;
+}
+
+.section-description {
+    font-size: 1rem;
+    color: var(--charcoal-black);
+    max-width: 650px;
+    margin: 0 auto 40px auto;
+    opacity: 0.8;
+}
+
+/* --- Services Grid --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service-item-list {
+    background: var(--light-gray);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--metallic-gold);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.service-item-list:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.service-item-list i {
+    font-size: 3rem;
+    color: var(--metallic-gold-dark);
+    margin-bottom: 20px;
+    transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.service-item-list:hover i {
+    transform: scale(1.2) rotate(-10deg);
+    color: var(--metallic-gold);
+}
+
+.service-item-list h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--charcoal-black);
+    margin-bottom: 12px;
+}
+
+.service-item-list p {
+    font-size: 0.95rem;
+    color: var(--charcoal-black);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.service-read-more {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--charcoal-black);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.service-read-more i {
+    font-size: 0.8rem;
+    margin-left: 8px;
+    transition: margin-left 0.3s ease;
+}
+
+.service-read-more:hover {
+    color: var(--metallic-gold);
+}
+
+.service-read-more:hover i {
+    margin-left: 12px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Optional staggered fade-in animation for wow.js --- */
+.wow.animate__fadeInUp {
+    opacity: 0;
+    transform: translateY(20px);
+    animation-name: fadeInUpCustom;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInUpCustom {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
