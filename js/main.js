@@ -40,60 +40,60 @@ document.addEventListener('DOMContentLoaded', function () {
     stickyHeaderOnScroll(); // Run once on load
 
 
-   // =========================================================================
-// 2. MOBILE MENU TOGGLE LOGIC (SCROLLING FIX APPLIED)
-// (KEEPING YOUR EXISTING CODE FOR MENU TOGGLE)
-// =========================================================================
-if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', function (e) {
-        e.stopPropagation();
-        navLinks.classList.toggle('active');
-
-        const icon = this.querySelector('i');
-        if (navLinks.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-            document.body.style.overflow = ''; 
-
-            dropdowns.forEach(container => {
-                container.classList.remove('active');
-            });
-        }
-    });
-}
-
-// --- Mobile Dropdown Functionality (FIXED CLOSING ISSUE) ---
-dropdowns.forEach(container => {
-    const dropbtn = container.querySelector('.dropbtn');
-
-    dropbtn.addEventListener('click', function (e) {
-        // Only run this logic for mobile view when the main menu is active
-        if (window.innerWidth <= 768 && navLinks && navLinks.classList.contains('active')) {
-            e.preventDefault();
+    // =========================================================================
+    // 2. MOBILE MENU TOGGLE LOGIC (SCROLLING FIX APPLIED)
+    // (KEEPING YOUR EXISTING CODE FOR MENU TOGGLE)
+    // =========================================================================
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function (e) {
             e.stopPropagation();
+            navLinks.classList.toggle('active');
 
-            // Determine if we are closing the current one
-            const isClosing = container.classList.contains('active');
+            const icon = this.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                document.body.style.overflow = '';
 
-            // Close all other dropdowns
-            dropdowns.forEach(otherContainer => {
-                if (otherContainer !== container) {
-                    otherContainer.classList.remove('active');
-                }
-            });
-            
-            // Toggle the 'active' class on the clicked container.
-            // If it was already active (isClosing=true), it will be removed (closed).
-            // If it was inactive, it will be added (opened).
-            container.classList.toggle('active');
-        }
+                dropdowns.forEach(container => {
+                    container.classList.remove('active');
+                });
+            }
+        });
+    }
+
+    // --- Mobile Dropdown Functionality (FIXED CLOSING ISSUE) ---
+    dropdowns.forEach(container => {
+        const dropbtn = container.querySelector('.dropbtn');
+
+        dropbtn.addEventListener('click', function (e) {
+            // Only run this logic for mobile view when the main menu is active
+            if (window.innerWidth <= 768 && navLinks && navLinks.classList.contains('active')) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Determine if we are closing the current one
+                const isClosing = container.classList.contains('active');
+
+                // Close all other dropdowns
+                dropdowns.forEach(otherContainer => {
+                    if (otherContainer !== container) {
+                        otherContainer.classList.remove('active');
+                    }
+                });
+
+                // Toggle the 'active' class on the clicked container.
+                // If it was already active (isClosing=true), it will be removed (closed).
+                // If it was inactive, it will be added (opened).
+                container.classList.toggle('active');
+            }
+        });
     });
-});
-// (KEEPING YOUR EXISTING CODE FOR CLOSING ON OUTSIDE CLICK AND RESIZE)
-// ...
+    // (KEEPING YOUR EXISTING CODE FOR CLOSING ON OUTSIDE CLICK AND RESIZE)
+    // ...
 
     // --- Close Mobile Menu on Outside Click and Resize ---
     document.addEventListener('click', function (e) {
@@ -120,89 +120,82 @@ dropdowns.forEach(container => {
 
     // =========================================================================
     // 3. ENQUIRY MODAL LOGIC (Body overflow lock IS KEPT here)
-    // =========================================================================
     const modal = document.getElementById('enquiryModal');
     const showModalBtn = document.getElementById('showModalBtn');
+    const showHeroEnquiryBtn = document.getElementById('showHeroEnquiryBtn');
     const closeModalBtn = document.getElementById('closeModalBtn');
     const form = document.getElementById('enquiryForm');
     const formFields = document.getElementById('formFields');
     const successMessage = document.getElementById('successMessage');
     const submitBtn = document.getElementById('submitBtn');
     const modalFooter = document.getElementById('modalFooter');
-    const showHeroEnquiryBtn = document.getElementById('showHeroEnquiryBtn');
-//...
-if (showModalBtn) showModalBtn.addEventListener('click', openModal);
-if (showHeroEnquiryBtn) showHeroEnquiryBtn.addEventListener('click', openModal);
-if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
 
-  
-    // WhatsApp number (with country code if needed, like 91 for India)
-    const whatsappNumber = '8220341934';
-  
+    // WhatsApp number (with country code)
+    const whatsappNumber = '918220341934';
+
     function resetForm() {
-      if (form) form.reset();
-      if (successMessage) successMessage.classList.add('hidden');
-      if (formFields) formFields.classList.remove('hidden');
-      if (modalFooter) modalFooter.classList.remove('hidden');
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Submit';
-        submitBtn.onclick = null;
-      }
-    }
-  
-    function openModal() {
-      resetForm();
-      modal.classList.add('show');
-      modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-      modal.setAttribute('aria-hidden', 'false');
-    }
-  
-    function closeModal() {
-      modal.classList.remove('show');
-      modal.style.display = 'none';
-      document.body.style.overflow = '';
-      modal.setAttribute('aria-hidden', 'true');
-      resetForm();
-    }
-  
-    if (showModalBtn) showModalBtn.addEventListener('click', openModal);
-    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
-  
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-  
-        const name = document.getElementById('name').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const location = document.getElementById('location').value.trim();
-        const message = document.getElementById('message').value.trim();
-  
-        if (!name || !phone || !email || !location || !message) {
-          alert('Please fill all required fields correctly!');
-          return;
+        if (form) form.reset();
+        if (successMessage) successMessage.classList.add('hidden');
+        if (formFields) formFields.classList.remove('hidden');
+        if (modalFooter) modalFooter.classList.remove('hidden');
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Submit';
+            submitBtn.onclick = null;
         }
-  
-        const whatsappMsg =
-          `I would like to enquire about your services.%0A👤 Name: ${name}%0A📞 Phone: ${phone}%0A📧 Email: ${email}%0A📍 Location: ${location}%0A📝 Message: ${message}`;
-        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMsg}`;
-  
-        // Open WhatsApp chat in new tab
-        window.open(whatsappUrl, '_blank');
-  
-        // Show success message and disable submit button, hide form fields
-        formFields.classList.add('hidden');
-        successMessage.classList.remove('hidden');
-  
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Message Sent ✔️';
-  
-        // Keep modal open for user to close manually
-      });
     }
 
+    function openModal() {
+        resetForm();
+        modal.classList.add('show');
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal() {
+        modal.classList.remove('show');
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        modal.setAttribute('aria-hidden', 'true');
+        resetForm();
+    }
+
+    // Open modal for both buttons
+    if (showModalBtn) showModalBtn.addEventListener('click', openModal);
+    if (showHeroEnquiryBtn) showHeroEnquiryBtn.addEventListener('click', openModal);
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+
+    // Form submit
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const location = document.getElementById('location').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !phone || !email || !location || !message) {
+                alert('Please fill all required fields correctly!');
+                return;
+            }
+
+            const whatsappMsg = `I would like to enquire about your services.%0A👤 Name: ${name}%0A📞 Phone: ${phone}%0A📧 Email: ${email}%0A📍 Location: ${location}%0A📝 Message: ${message}`;
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMsg}`;
+
+            // Open WhatsApp chat in new tab
+            window.open(whatsappUrl, '_blank');
+
+            // Show success message and disable submit button
+            formFields.classList.add('hidden');
+            successMessage.classList.remove('hidden');
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Message Sent ✔️';
+        });
+    }
 
     // =========================================================================
     // 4. SERVICES HOVER LOGIC (Image Swap)
@@ -405,7 +398,7 @@ if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
 
 
 
-  
+
 });
 
 

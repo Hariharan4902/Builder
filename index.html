@@ -11,12 +11,12 @@
         content="construction company in Chennai, builders, residential construction, commercial construction, architectural design, turnkey house, SolidBase Construction" />
     <meta name="author" content="SolidBase Construction Builders" />
     <link rel="canonical" href="https://yourwebsite.com/" />
-    
+
     <link rel="icon" type="image/png" sizes="32 x32" href="/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
     <link rel="manifest" href="/favicons/site.webmanifest">
-    <link rel="icon" type="image/x-icon" href="/images/logo/BUILDER7.jpeg">
+    <link rel="icon" type="image/x-icon" href="images/logo/BUILDER7.jpeg">
 
     <meta property="og:title" content="SolidBase Construction Builders | Trusted Construction Company in Chennai" />
     <meta property="og:description"
@@ -31,7 +31,7 @@
         content="From design to delivery — expert builders for residential & commercial projects in Chennai." />
     <meta name="twitter:image" content="https://yourwebsite.com/images/logo/BUILDER7.jpeg" />
 
-    
+
 
     <link rel="stylesheet" href="css/topbar.css">
     <link rel="stylesheet" href="css/navbar.css">
@@ -46,7 +46,8 @@
     <link rel="stylesheet" href="css/whychoose.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <script src="js/main.js" defer></script>
@@ -97,11 +98,11 @@
                 <div class="dropdown">
                     <a href="pages/services.html" class="dropbtn">Services <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="#">Turnkey House Construction</a>
-                        <a href="#">Commercial Construction</a>
-                        <a href="#">Architectural Designing</a>
-                        <a href="#">Structural Designing</a>
-                        <a href="#">Building Plan Approval</a>
+                        <a href="pages/services.html#turnkey">Turnkey House Construction</a>
+                        <a href="pages/services.html#commercial">Commercial Construction</a>
+                        <a href="pages/services.html#architectural">Architectural Designing</a>
+                        <a href="pages/services.html#structural">Structural Designing</a>
+                        <a href="pages/services.html#approval">Building Plan Approval</a>
                     </div>
                 </div>
             </li>
@@ -125,92 +126,82 @@
 
 
 
+        <!-- ===================== Enquiry Modal HTML ===================== -->
         <div class="modal-overlay" id="enquiryModal" aria-hidden="true" aria-modal="true" role="dialog">
             <div class="modal-content">
-              <div class="modal-header-custom">
-                <h3 class="modal-title">
-                  <i class="bi bi-headset me-2"></i> Enquiry Form
-                </h3>
-                <button type="button" class="btn-close" id="closeModalBtn" aria-label="Close">
-                  &times;
-                </button>
-              </div>
-              <form id="enquiryForm">
+                <div class="modal-header-custom">
+                    <h3 class="modal-title">
+                        <i class="bi bi-headset me-2"></i> Enquiry Form
+                    </h3>
+                    <button type="button" class="btn-close" id="closeModalBtn" aria-label="Close">
+                        &times;
+                    </button>
+                </div>
+
+                <!-- Scrollable form content -->
                 <div class="modal-body">
-                  <div id="formFields">
-                    <div class="mb-4">
-                      <label for="name" class="form-label">
-                        <i class="bi bi-person me-2"></i>Name
-                      </label>
-                      <input type="text" class="form-control" id="name" required placeholder="Enter your name" />
-                    </div>
-          
-                    <div class="mb-4">
-                      <label for="phone" class="form-label">
-                        <i class="bi bi-telephone me-2"></i>Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        class="form-control"
-                        id="phone"
-                        required
-                        placeholder="Enter 10-digit number"
-                        pattern="[0-9]{10}"
-                        maxlength="10"
-                        title="Phone number must be exactly 10 digits"
-                      />
-                    </div>
-          
-                    <div class="mb-4">
-                      <label for="email" class="form-label">
-                        <i class="bi bi-envelope me-2"></i>Email
-                      </label>
-                      <input type="email" class="form-control" id="email" required placeholder="Enter your email" />
-                    </div>
-          
-                    <div class="mb-4">
-                      <label for="location" class="form-label">
-                        <i class="bi bi-geo-alt me-2"></i>Location
-                      </label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="location"
-                        required
-                        placeholder="e.g., Chennai, Coimbatore"
-                      />
-                    </div>
-          
-                    <div class="mb-3">
-                      <label for="message" class="form-label">
-                        <i class="bi bi-chat-left-text me-2"></i>Please explain your requirements
-                      </label>
-                      <textarea
-                        class="form-control"
-                        id="message"
-                        rows="4"
-                        required
-                        placeholder="Tell us about your project or service need."
-                      ></textarea>
-                    </div>
-                  </div>
-          
-                  <!-- Success message shown after submit -->
-                  <div id="successMessage" class="success-message hidden">
-                    We received your message. Thank you!
-                  </div>
+                    <form id="enquiryForm">
+                        <div id="formFields">
+                            <div class="mb-4">
+                                <label for="name" class="form-label">
+                                    <i class="bi bi-person me-2"></i>Name
+                                </label>
+                                <input type="text" class="form-control" id="name" required
+                                    placeholder="Enter your name" />
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="phone" class="form-label">
+                                    <i class="bi bi-telephone me-2"></i>Phone Number
+                                </label>
+                                <input type="tel" class="form-control" id="phone" required
+                                    placeholder="Enter 10-digit number" pattern="[0-9]{10}" maxlength="10"
+                                    title="Phone number must be exactly 10 digits" />
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="email" class="form-label">
+                                    <i class="bi bi-envelope me-2"></i>Email
+                                </label>
+                                <input type="email" class="form-control" id="email" required
+                                    placeholder="Enter your email" />
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="location" class="form-label">
+                                    <i class="bi bi-geo-alt me-2"></i>Location
+                                </label>
+                                <input type="text" class="form-control" id="location" required
+                                    placeholder="e.g., Chennai, Coimbatore" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="message" class="form-label">
+                                    <i class="bi bi-chat-left-text me-2"></i>Please explain your requirements
+                                </label>
+                                <textarea class="form-control" id="message" rows="4" required
+                                    placeholder="Tell us about your project or service need."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Success message -->
+                        <div id="successMessage" class="success-message hidden">
+                            We received your message. Thank you!
+                        </div>
+
+                        <div class="modal-footer-custom" id="modalFooter">
+                            <button type="submit" class="submit-btn" id="submitBtn">Submit</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="modal-footer-custom" id="modalFooter">
-                  <button type="submit" class="submit-btn" id="submitBtn">Submit</button>
-                </div>
-              </form>
             </div>
-          </div>
-          
-          <button class="enquiry-button" id="showModalBtn" aria-label="Open Enquiry Form">
+        </div>
+
+        <!-- Floating Enquiry Button -->
+        <button class="enquiry-button" id="showModalBtn" aria-label="Open Enquiry Form">
             <span class="button-text">Enquiry</span>
             <i class="bi bi-chat-dots"></i>
-          </button>
+        </button>
 
 
         <section class="services-section">
@@ -218,30 +209,36 @@
                 <div class="services-intro">
                     <h2>Build Smart And Effective Construction Solutions</h2>
                     <hr class="heading-underline">
-                    <p>Mauris a vulputate elit, eu venenatis libero. Suspendisse tempus ligula laoreet, suscipit magna varius.
-                        Donec sit amet ipsum vulputate tellus pretium fermentum sit amet nisl. We have a team of dedicated
+                    <p>Mauris a vulputate elit, eu venenatis libero. Suspendisse tempus ligula laoreet, suscipit magna
+                        varius.
+                        Donec sit amet ipsum vulputate tellus pretium fermentum sit amet nisl. We have a team of
+                        dedicated
                         professional.
                     </p>
                     <a class="btn-secondary" href="/pages/services.html">VIEW OUR SERVICES</a>
                 </div>
-        
+
                 <div class="services-cards">
                     <div class="service-card flip-scale-up-diag-2">
-                        <img src="images/builderimages/image14.jpg" alt="Steel structure for industrial building construction" class="card-image">
+                        <img src="images/builderimages/image14.jpg"
+                            alt="Steel structure for industrial building construction" class="card-image">
                         <div class="card-content">
                             <span class="card-divider"></span>
                             <h4>INDUSTRIAL CONSTRUCTION</h4>
-                            <p>Donec elit ligula, maximus non euismod vitae, lacinia at sem. Donec sit amet ipsum vulputate tellus
+                            <p>Donec elit ligula, maximus non euismod vitae, lacinia at sem. Donec sit amet ipsum
+                                vulputate tellus
                                 pretium fermentum.</p>
                         </div>
                     </div>
-                    
+
                     <div class="service-card flip-scale-up-diag-2">
-                        <img src="images/builderimages/image15.jpg" alt="Modern new residential house under construction" class="card-image">
+                        <img src="images/builderimages/image15.jpg"
+                            alt="Modern new residential house under construction" class="card-image">
                         <div class="card-content">
                             <span class="card-divider"></span>
                             <h4>RESIDENTIAL CONSTRUCTION</h4>
-                            <p>Donec elit ligula, maximus non euismod vitae, lacinia at sem. Donec sit amet ipsum vulputate tellus
+                            <p>Donec elit ligula, maximus non euismod vitae, lacinia at sem. Donec sit amet ipsum
+                                vulputate tellus
                                 pretium fermentum.</p>
                         </div>
                     </div>
@@ -253,7 +250,8 @@
             <div class="pro-services-container">
                 <div class="pro-services-intro">
                     <h2>OUR PROFESSIONAL CONSTRUCTION SERVICES</h2>
-                    <p>Sometimes you want to go where everybody knows your name. And they're always glad you came. Straight r'in'
+                    <p>Sometimes you want to go where everybody knows your name. And they're always glad you came.
+                        Straight r'in'
                         the hills Someday the mountain will.</p>
                 </div>
 
@@ -313,8 +311,10 @@
                             <i class="fas fa-warehouse icon-large"></i>
                         </div>
                         <h3>TOP BUILDER IN CHENNAI</h3>
-                        <p>Integer adipiscing elit eget risus sollicitudin pellentesque et non erat. Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>Integer adipiscing elit eget risus sollicitudin pellentesque et non erat. Lorem ipsum dolor
+                            sit amet,
+                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.</p>
                     </div>
 
                     <div class="choose-card">
@@ -322,7 +322,8 @@
                             <i class="fas fa-home"></i>
                         </div>
                         <h3>DREAM HOUSE</h3>
-                        <p>Sollicitudin pellentesque et non erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit eget risus
+                        <p>Sollicitudin pellentesque et non erat. Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit eget risus
                             sollicitudin pellentesque et non erat. Integer adipiscing elit eget risus sollicitudin.</p>
                     </div>
 
@@ -331,9 +332,11 @@
                             <i class="fas fa-truck-moving"></i>
                         </div>
                         <h3>EXPERIENCED WORKER</h3>
-                        <p>Pellentesque et non erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer adipiscing
+                        <p>Pellentesque et non erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                            adipiscing
                             elit
-                            eget risus sollicitudin pellentesque et non erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            eget risus sollicitudin pellentesque et non erat. Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit.
                         </p>
                     </div>
                 </div>
@@ -426,7 +429,8 @@
 
                 <div class="project-grid">
                     <div class="project-item" data-category="mining">
-                        <img src="images/builderimages/image8.jpg" alt="Heavy Loader at Mining Site for construction material" class="project-image" />
+                        <img src="images/builderimages/image8.jpg"
+                            alt="Heavy Loader at Mining Site for construction material" class="project-image" />
                         <div class="project-overlay">
                             <div class="overlay-content">
                                 <h4>Mining Site Project</h4>
@@ -436,7 +440,8 @@
                     </div>
 
                     <div class="project-item" data-category="builder">
-                        <img src="images/builderimages/image7.jpg" alt="Bulldozer smoothing ground for new road construction" class="project-image" />
+                        <img src="images/builderimages/image7.jpg"
+                            alt="Bulldozer smoothing ground for new road construction" class="project-image" />
                         <div class="project-overlay">
                             <div class="overlay-content">
                                 <h4>Road Construction</h4>
@@ -446,7 +451,8 @@
                     </div>
 
                     <div class="project-item" data-category="mining">
-                        <img src="images/builderimages/image9.jpg" alt="Excavator digging in a quarry for raw materials" class="project-image" />
+                        <img src="images/builderimages/image9.jpg" alt="Excavator digging in a quarry for raw materials"
+                            class="project-image" />
                         <div class="project-overlay">
                             <div class="overlay-content">
                                 <h4>Quarry Excavation</h4>
@@ -456,7 +462,8 @@
                     </div>
 
                     <div class="project-item" data-category="portable repair">
-                        <img src="images/builderimages/image10.jpg" alt="Heavy Machinery being repaired on-site" class="project-image" />
+                        <img src="images/builderimages/image10.jpg" alt="Heavy Machinery being repaired on-site"
+                            class="project-image" />
                         <div class="project-overlay">
                             <div class="overlay-content">
                                 <h4>Heavy Equipment Repair</h4>
@@ -466,7 +473,8 @@
                     </div>
 
                     <div class="project-item" data-category="builder">
-                        <img src="images/builderimages/image11.jpg" alt="Digger working on a concrete foundation for a building" class="project-image" />
+                        <img src="images/builderimages/image11.jpg"
+                            alt="Digger working on a concrete foundation for a building" class="project-image" />
                         <div class="project-overlay">
                             <div class="overlay-content">
                                 <h4>Foundation Work</h4>
@@ -476,7 +484,8 @@
                     </div>
 
                     <div class="project-item" data-category="mining">
-                        <img src="images/builderimages/image15.jpg" alt="Trucks and Dozers at a large earthworks project" class="project-image" />
+                        <img src="images/builderimages/image15.jpg"
+                            alt="Trucks and Dozers at a large earthworks project" class="project-image" />
                         <div class="project-overlay">
                             <div class="overlay-content">
                                 <h4>Large Scale Earthworks</h4>
@@ -486,7 +495,8 @@
                     </div>
 
                     <div class="project-item" data-category="portable">
-                        <img src="images/builderimages/image6.jpg" alt="Truck with crane transporting portable site office" class="project-image" />
+                        <img src="images/builderimages/image6.jpg"
+                            alt="Truck with crane transporting portable site office" class="project-image" />
                         <div class="project-overlay">
                             <div class="overlay-content">
                                 <h4>Transportation & Lifting</h4>
@@ -496,7 +506,8 @@
                     </div>
 
                     <div class="project-item" data-category="mining">
-                        <img src="images/builderimages/image8.jpg" alt="Dump truck hauling material from a construction site" class="project-image" />
+                        <img src="images/builderimages/image8.jpg"
+                            alt="Dump truck hauling material from a construction site" class="project-image" />
                         <div class="project-overlay">
                             <div class="overlay-content">
                                 <h4>Material Hauling</h4>
@@ -577,7 +588,8 @@
                         </div>
                         <div class="card">
                             <div class="card-image">
-                                <img src="images/WhatWeDo/renovation.jpg" alt="Interior design services for new builds" />
+                                <img src="images/WhatWeDo/renovation.jpg"
+                                    alt="Interior design services for new builds" />
                             </div>
                             <div class="card-content">
                                 <p class="description">Develop and recreate as well as the ones we provide</p>
@@ -683,12 +695,18 @@
 
 
                 <div class="footer-social">
-                    <a href="https://www.youtube.com/" aria-label="YouTube" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                    <a href="https://twitter.com/" aria-label="Twitter" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
-                    <a href="https://facebook.com/" aria-label="Facebook" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://wa.me/919379473853" aria-label="WhatsApp" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.instagram.com/" aria-label="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/" aria-label="YouTube" rel="noopener noreferrer"><i
+                            class="fab fa-youtube"></i></a>
+                    <a href="https://twitter.com/" aria-label="Twitter" rel="noopener noreferrer"><i
+                            class="fab fa-x-twitter"></i></a>
+                    <a href="https://facebook.com/" aria-label="Facebook" rel="noopener noreferrer"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/919379473853" aria-label="WhatsApp" rel="noopener noreferrer"><i
+                            class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/" aria-label="Instagram" rel="noopener noreferrer"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/" aria-label="LinkedIn" rel="noopener noreferrer"><i
+                            class="fab fa-linkedin-in"></i></a>
                 </div>
 
             </div>
@@ -717,7 +735,8 @@
                 <p><strong>SolidBase Construction</strong><br />
                     164, 6th St, Thangal karai, Kumaran Colony,<br />
                     Vadapalani, Chennai, 600026.</p>
-                <p><i class="fas fa-phone-alt"></i> <a href="tel:+916379444342">+91-63794 44342</a> / <a href="tel:+919342373853">+91-93423 73853</a></p>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:+916379444342">+91-63794 44342</a> / <a
+                        href="tel:+919342373853">+91-93423 73853</a></p>
                 <p><i class="fas fa-envelope"></i> <a href="mailto:builder@.co.in">builder@.co.in</a></p>
             </div>
         </div>

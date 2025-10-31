@@ -587,7 +587,7 @@ body {
   .dropdown-content {
     position: static;
     box-shadow: none;
-    background-color: var(--white); /* Main Content Background: White */
+     /* Main Content Background: White */
     border-top: none;
     display: none;
     width: 100%;
@@ -597,7 +597,7 @@ body {
   }
 
   .dropdown-content a {
-    color: var(--charcoal-black) !important; /* Dark Accent: Charcoal Black */
+    color: var(--white) !important; /* Dark Accent: Charcoal Black */
     /* Dropdown links are dark on white background */
   }
 
